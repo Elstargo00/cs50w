@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% if notes %}
+<h1 style="color: Blue;">NOTE: </h1>
+{% endif %}
+<ul>
+    {% for note in notes %}
+        <li style="color:darkmagenta;">{{ note }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{{ url_for('_notes') }}" method="POST">
+
+    <input type="text" name="note" placeholder="Enter your note">
+    <button>Add note</button>
+
+</form>
+
+{% endblock %}
